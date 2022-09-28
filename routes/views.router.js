@@ -1,10 +1,9 @@
 import { Router } from "express";
+import os from 'os';
 
 const router = Router();
 
 router.get('/info', (req, res) => {
-
-
     const info = {
         arg: process.title,
         so: process.platform,
@@ -12,7 +11,8 @@ router.get('/info', (req, res) => {
         rss: process.memoryUsage(),
         path: process.execPath,
         processId: process.pid,
-        folder: process.cwd()
+        folder: process.cwd(),
+        cantCPUs: os.cpus().length
     }
 
     res.render('pages/info', {info})

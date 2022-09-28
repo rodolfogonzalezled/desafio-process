@@ -1,11 +1,9 @@
 import express from 'express';
-import { createServer } from "http";
 import viewsRouter from './routes/views.router.js';
 import randomsRouter from './routes/randoms.router.js';
-import minimist from 'minimist';
+// import minimist from 'minimist';
 
 const app = express();
-const httpServer = createServer(app);
 
 app.use(express.json());
 
@@ -17,12 +15,15 @@ app.use(express.static('public'));
 app.set("views", "./public/views");
 app.set("view engine", "ejs");
 
-const args = minimist(process.argv.slice(2), { alias: { p: "PORT" }, default: { p: 8080 } });
-const { PORT } = args;
+//OBTENER PUERTO USANDO MINIMIST
+// const args = minimist(process.argv.slice(2), { alias: { p: "PORT" }, default: { p: 8080 } });
+// const { PORT } = args;
+
+const PORT = process.env.PORT; 
 
 // --- Conexión del Servidor ------------------------------------------------------------
-const connectedServer = httpServer.listen(PORT, () => {
-    console.log(`Servidor http escuchando en el puerto ${connectedServer.address().port}`)
+const connectedServer = app.listen(PORT, () => {
+    console.log(`Servidor http escuchando en el puerto ${PORT}`)
 });
 connectedServer.on("error", error => console.log(`Error en servidor ${error}`));
 // --------------------------------------------------------------------------------------
