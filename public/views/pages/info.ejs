@@ -1,12 +1,26 @@
-<div>
-    <ul>
-        <li>Argumentos de entrada: <%= info.arg %></li>
-        <li>Nombre de la plataforma (sistema operativo): <%= info.so %></li>
-        <li>Versión de node.js: <%= info.nodeVersion %></li>
-        <li>Memoria total reservada (rss): <%= info.rss %></li>
-        <li>Path de ejecución: <%= info.path %></li>
-        <li>Process id: <%= info.processId %></li>
-        <li>Carpeta del proyecto: <%= info.folder %></li>
-        <li>Cantidad de Procesadores: <%= info.cantCPUs %></li>
-    </ul>
-</div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>PROCESS</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>Argumentos de entrada: <%= info.arg %></li>
+            <li>Nombre de la plataforma (sistema operativo): <%= info.so %></li>
+            <li>Versión de node.js: <%= info.nodeVersion %></li>
+            <li>Memoria total reservada (rss): <%= info.rss %></li>
+            <li>Path de ejecución: <%= info.path %></li>
+            <li>Process id: <%= info.processId %></li>
+            <li>Carpeta del proyecto: <%= info.folder %></li>
+            <li>Cantidad de Procesadores: <%= info.cantCPUs %></li>
+        </ul>
+    </div>
+</body>
+</html>
